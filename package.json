@@ -1,0 +1,18 @@
+{
+  "name": "uclcontrols",
+  "version": "1.0.0",
+  "description": "Aplicação para controle de faltas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "RafaelDoering",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.18",
+    "morgan": "^1.9.1"
+  }
+}
