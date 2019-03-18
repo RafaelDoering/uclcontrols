@@ -10,7 +10,7 @@ router.get('/:id', CourseController.get);
 
 router.delete('/:id', CourseController.delete);
 
-router.patch("/:id", CourseController.edit);
+router.put("/:id", CourseController.edit);
 
 router.get('/', CourseController.gets);
 

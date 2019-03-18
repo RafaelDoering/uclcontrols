@@ -1,21 +1,29 @@
 const Course = require('../models/Course');
 
 exports.create = (req, res) => {
-  var newCourse = new Course();
+  if(req.body.name){
+    const newCourse = new Course();
 
-  newCourse.name = req.body.name;
-
-  newCourse.save((errCourse, createdCourse) => {
-    if (errCourse) {
-      return res.status(400).json({
-        ...errCourse
-      });
-    } else {
-      return res.status(200).json({
-        course: createdCourse
-      });
-    }
-  });
+    newCourse.name = req.body.name;
+  
+    newCourse.save((errCourse, createdCourse) => {
+      if (errCourse) {
+        return res.status(400).json({
+          ...errCourse
+        });
+      } else {
+        return res.status(200).json({
+          course: createdCourse
+        });
+      }
+    });
+  }else{
+    res.status(400).json({
+      errors: [
+        "Error."
+      ]
+    });
+  }
 }
 
 exports.get = (req, res) => {
