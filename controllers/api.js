@@ -28,17 +28,29 @@ module.exports.create = (req, res) => {
 
   newCourse.save((err, createdCourse) => {
     if(err){
-      res.send('error')
+      res.send('error');
     }else{
-      res.send(createdCourse)
+      res.send(createdCourse);
     }
-  })
+  });
 }
 
 module.exports.edit = (req, res) => {
-  res.send('PUT /courses')
+  Course.findByIdAndUpdate(req.params.id, {$set: {name: req.body.name}}, (err, courseEdited) => {
+    if(err){
+      res.send('error');
+    }else {
+      res.send(courseEdited);
+    }
+  });
 }
 
 module.exports.delete = (req, res) => {
-  
+  Course.findByIdAndDelete(req.params.id, (err, courseDeleted) => {
+    if(err){
+      res.send('error');
+    }else{
+      res.send(courseDeleted);
+    }
+  });
 }

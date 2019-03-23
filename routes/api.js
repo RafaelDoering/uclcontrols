@@ -2,18 +2,18 @@
 
 const express = require('express');
 
-const apiController = require('../controllers/api')
+const apiController = require('../controllers/api');
 
 const router = express.Router();
 
-router.get('/courses/:id', apiController.get)
+router.get('/courses/:id', apiController.get);
 
-router.get('/courses', apiController.gets)
+router.get('/courses', apiController.gets);
 
-router.post('/courses', apiController.create)
+router.post('/courses', apiController.create);
 
-router.put('/courses', apiController.edit)
+router.put('/courses/:id', apiController.edit);
 
-router.delete('/courses', apiController.delete)
+router.delete('/courses/:id', apiController.delete);
 
 module.exports = router;
